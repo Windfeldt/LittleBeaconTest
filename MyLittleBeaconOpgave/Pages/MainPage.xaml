@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:MyLittleBeaconOpgave" 
+             x:Class="MyLittleBeaconOpgave.MainPage">
+    <StackLayout>
+            
+            <ListView  ItemsSource="{Binding Customerlist}"
+                       ItemTapped="Handle_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="17"/>
+                                <RowDefinition Height="17"/>
+                                <RowDefinition Height="17"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                                
+                                <Image Source="{Binding Picture, Converter={StaticResource ByteConverter}}"  
+                                       Grid.Row="0" Grid.RowSpan="1" 
+                                       Grid.Column="0" Grid.ColumnSpan="0"
+                                       WidthRequest="30"/>
+                                <Label Text="{Binding Name}"
+                                       Grid.Row="0"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding Street}"
+                                       Grid.Row="1"
+                                       Grid.Column="1"/>
+                                <Image Source="MailImg.png"
+                                       Grid.Row="1"
+                                       Grid.Column="2"/>
+                                <Image Source="PhoneImg.png"
+                                       Grid.Row="0"
+                                       Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Download" Command="{Binding DownloadCommand}" 
+                VerticalOptions="EndAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                WidthRequest="200" 
+                CornerRadius="20"
+                BackgroundColor="Blue">
+            </Button>
+    </StackLayout>
+</ContentPage>
