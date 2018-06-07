@@ -3,53 +3,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:MyLittleBeaconOpgave" 
              x:Class="MyLittleBeaconOpgave.MainPage">
-    <StackLayout>
-            
-            <ListView  ItemsSource="{Binding Customerlist}"
-                       ItemTapped="Handle_ItemTapped">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                         <Grid>
-                         <Grid.RowDefinitions>
-                             <RowDefinition Height="17"></RowDefinition>
-                             <RowDefinition Height="17"></RowDefinition>
-                             <RowDefinition Height="17"></RowDefinition>
-                            </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                                
-                                <Image Source="{Binding Picture, Converter={StaticResource ByteConverter}}"  
-                                       Grid.Row="0" Grid.RowSpan="2"  
-                                       Grid.Column="0" Grid.ColumnSpan="1"/>
-                                <Label Text="{Binding Name}"
-                                       Grid.Row="0"
-                                       Grid.Column="1"/>
-                                <Label Text="{Binding Street}"
-                                       Grid.Row="1"
-                                       Grid.Column="1"/>
-                                <Image Source="MailImg.png"
-                                       Grid.Row="1"
-                                       Grid.Column="3"/>
-                                <Image Source="PhoneImg.png"
-                                       Grid.Row="0"
-                                       Grid.Column="3"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Button Text="Download" Command="{Binding DownloadCommand}" 
-                VerticalOptions="EndAndExpand" 
-                HorizontalOptions="CenterAndExpand" 
-                WidthRequest="200" 
-                CornerRadius="20"
-                BackgroundColor="Blue"
-                TextColor="White">
-            </Button>
-    </StackLayout>
+<StackLayout>
+        
+        <ListView  ItemsSource="{Binding Customerlist}"
+                   ItemSelected="Handle_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                     <Grid>
+                     <Grid.RowDefinitions>
+                         <RowDefinition Height="17"></RowDefinition>
+                         <RowDefinition Height="17"></RowDefinition>
+                         <RowDefinition Height="17"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                            
+                            <Image Source="{Binding Picture, Converter={StaticResource ByteConverter}}"  
+                                   Grid.Row="0" Grid.RowSpan="2"  
+                                   Grid.Column="0" Grid.ColumnSpan="1"/>
+                            <Label Text="{Binding Name}"
+                                   Grid.Row="0"
+                                   Grid.Column="1"/>
+                            <Label Text="{Binding Street}"
+                                   Grid.Row="1"
+                                   Grid.Column="1"/>
+                            <Image Source="MailImg.png"
+                                   Grid.Row="1"
+                                   Grid.Column="3"/>
+                            <Image Source="PhoneImg.png"
+                                   Grid.Row="0"
+                                   Grid.Column="3"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Download" Command="{Binding DownloadCommand}" 
+            VerticalOptions="EndAndExpand" 
+            HorizontalOptions="CenterAndExpand" 
+            WidthRequest="200" 
+            CornerRadius="20"
+            BackgroundColor="Blue"
+            TextColor="White">
+        </Button>
+</StackLayout>
 </ContentPage>

@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyLittleBeaconOpgave.Pages.SelectedCustomer">
     <ContentPage.Content>
-        
+        <RelativeLayout BackgroundColor="#C70072">
+            <Image  Source="{Binding SelectedValue.Picture, 
+                    Converter={StaticResource ByteConverter}}"
+
+                    HeightRequest="30"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Width,
+                    Factor=1.45}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Height,
+                    Factor=0.3}"
+
+                    
+                    />
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

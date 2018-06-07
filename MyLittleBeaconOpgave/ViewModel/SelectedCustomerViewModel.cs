@@ -78,18 +78,20 @@ namespace MyLittleBeaconOpgave.ViewModel
             App.CustomerController.GetCustomer();
             CustomerList = App.CustomerController.tableList;
 
-            App.salesOrderController.GetSalesOrder();
+            App.SalesOrderController.GetSalesOrder();
             SalesOrderList = App.SalesOrderController.tableListSalesOrder;
 
-            App.itemController.GetItems();
+            App.ItemController.GetItems();
             ItemList = App.ItemController.tableListItem;
 
         }
 
 
 
-        public SelectedCustomerViewModel()
+        public SelectedCustomerViewModel(Customer customer)
         {
+            GetDbList();
+            SelectedValue = customer;
         }
     }
 }

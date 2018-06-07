@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using MyLittleBeaconOpgave.ViewModel;
 using MyLittleBeaconOpgave.Pages;
+using MyLittleBeaconOpgave.Models;
 
 namespace MyLittleBeaconOpgave
 {
@@ -22,12 +23,21 @@ namespace MyLittleBeaconOpgave
             //BindingContext = new SalesOrderViewModel();
         }
 
-        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new SelectedCustomer());
+            Navigation.PushAsync(new SelectedCustomer(e.SelectedItem as Customer));
         }
     }
 }
+
+
+
+
+
+
+
+
+
 #region old code
 //string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "opgave.gz");
 //string filePathdb = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "opgave.db");
