@@ -8,7 +8,7 @@ using SQLite;
 [assembly: Dependency(typeof(SqlLite_Android))]
 namespace MyLittleBeaconOpgave.Droid.Data
 {
-    public class SqlLite_Android : ISqlLite
+    public class SqlLite_Android : ISQLite
     {
 
 

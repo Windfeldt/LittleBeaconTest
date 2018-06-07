@@ -84,7 +84,7 @@ namespace MyLittleBeaconOpgave.ViewModel
 
                 App.CustomerController.GetCustomer();
 
-                Customerlist = App.CustomerController.tablelist;
+                Customerlist = App.CustomerController.tableList;
 
 
 

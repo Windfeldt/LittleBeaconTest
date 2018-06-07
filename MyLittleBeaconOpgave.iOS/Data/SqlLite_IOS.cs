@@ -9,7 +9,7 @@ using MyLittleBeaconOpgave.Data;
 namespace MyLittleBeaconOpgave.iOS.Data
 {
 
-    public class SqlLite_IOS : ISqlLite
+    public class SqlLite_IOS : ISQLite
     {
         public SqlLite_IOS()
         {
@@ -18,9 +18,8 @@ namespace MyLittleBeaconOpgave.iOS.Data
         {
             var fileName = "opgave.db";
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
             var path = Path.Combine(documentsPath, fileName);
-            var dbIOS = new SQLite.SQLiteConnection(path);
+            var dbIOS = new SQLiteConnection(path);
             return dbIOS;
         }
     }

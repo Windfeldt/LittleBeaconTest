@@ -9,6 +9,9 @@ namespace MyLittleBeaconOpgave
     public partial class App : Application
     {
         public static CustomerController customerController;
+        public static SalesOrderController salesOrderController;
+        public static ItemController itemController;
+
 
         public App()
         {
@@ -41,6 +44,28 @@ namespace MyLittleBeaconOpgave
                     customerController = new CustomerController();
                 }
                 return customerController;
+            }
+        }
+        public static SalesOrderController SalesOrderController
+        {
+            get
+            {
+                if (salesOrderController == null)
+                {
+                    salesOrderController = new SalesOrderController();
+                }
+                return salesOrderController;
+            }
+        }
+        public static ItemController ItemController
+        {
+            get
+            {
+                if (itemController == null)
+                {
+                    itemController = new ItemController();
+                }
+                return itemController;
             }
         }
     }

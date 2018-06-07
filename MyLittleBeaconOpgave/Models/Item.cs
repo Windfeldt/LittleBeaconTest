@@ -10,7 +10,6 @@ namespace MyLittleBeaconOpgave.Models
         public bool Price { get; set; }
         public byte Image { get; set; }
         public Item()
-        {
-        }
+        { }
     }
 }

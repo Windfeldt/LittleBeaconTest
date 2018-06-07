@@ -2,7 +2,7 @@
 using SQLite;
 namespace MyLittleBeaconOpgave.Data
 {
-    public interface ISqlLite
+    public interface ISQLite
     {
         SQLiteConnection GetConnection(); 
     }

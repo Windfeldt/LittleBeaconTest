@@ -23,6 +23,7 @@
     <Compile Remove="Data\Database.cs" />
     <Compile Remove="Data\OpgaveDb.cs" />
     <Compile Remove="Kunder.cs" />
+    <Compile Remove="ViewModel\SalesOrderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Data\opgave.gz" />

@@ -17,12 +17,12 @@ namespace MyLittleBeaconOpgave.Data
 
         public CustomerController()
         {
-            database = DependencyService.Get<ISqlLite>().GetConnection();
+            database = DependencyService.Get<ISQLite>().GetConnection();
             database.CreateTable<Customer>();
 
         }
 
-        public List<Customer> tablelist;
+        public List<Customer> tableList;
 
         public List<Customer> GetCustomer()
 
@@ -36,17 +36,10 @@ namespace MyLittleBeaconOpgave.Data
                 }
                 else
                 {
-                    return tablelist = database.Table<Customer>().ToList<Customer>();
+                    return tableList = database.Table<Customer>().ToList<Customer>();
 
                 }
-
-
             }
-
-
-
-
-
         }
     }
 }
