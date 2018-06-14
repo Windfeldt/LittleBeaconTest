@@ -1,22 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyLittleBeaconOpgave.Pages.SelectedCustomer">
-    <ContentPage.Content>
-        <RelativeLayout BackgroundColor="#C70072">
-            <Image  Source="{Binding SelectedValue.Picture, 
-                    Converter={StaticResource ByteConverter}}"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MyLittleBeaconOpgave.Pages.SelectedCustomer">
+    <StackLayout >
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Text="{Binding SelectedValue.Name}" 
+                   Grid.Row="0" 
+                   Grid.Column="0"/>
 
-                    HeightRequest="30"
-                    RelativeLayout.WidthConstraint="{ConstraintExpression
-                    Type=RelativeToParent,
-                    Property=Width,
-                    Factor=1.45}"
-                    RelativeLayout.HeightConstraint="{ConstraintExpression
-                    Type=RelativeToParent,
-                    Property=Height,
-                    Factor=0.3}"
+            <Image Source="{Binding SelectedValue.Picture, 
+                   Converter={StaticResource ByteConverter}}}" 
+                   HorizontalOptions="EndAndExpand" 
+                   Grid.Row="0" 
+                   Grid.RowSpan="2" 
+                   Grid.Column="2"/>
 
-                    
-                    />
-        </RelativeLayout>
-    </ContentPage.Content>
+            <Label Text="Zip:" 
+                   Font="Bold" 
+                   Grid.Row="1" 
+                   Grid.Column="0" 
+                   HorizontalOptions="Start"/> 
+            
+            <Label Text="{Binding SelectedValue.ZipCode}" 
+                   Grid.Row="1" 
+                   Grid.Column="0" 
+                   HorizontalOptions="Center"/>
+            
+            <Label Text="{Binding SelectedValue.City}" 
+                   Grid.Row="1" 
+                   Grid.Column="1"  
+                   HorizontalOptions="EndAndExpand"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"> </ColumnDefinition>
+                    <ColumnDefinition Width="Auto"> </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            
+            <Label Text="Phone:" 
+                   Font="Bold" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   HorizontalOptions="Start"/>
+            <Label Text="{Binding SelectedValue.Phone}" 
+                   Grid.Row="0" 
+                   Grid.Column="1"
+            HorizontalOptions="Start"/>
+       
+            </Grid>
+             <Grid>
+            <Label Text="Mail:" 
+                   Font="Bold" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   HorizontalOptions="Start"/>
+            <Label Text="{Binding SelectedValue.Email}" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="1" 
+                   HorizontalOptions="EndAndExpand"/>
+            </Grid>
+        <ListView >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

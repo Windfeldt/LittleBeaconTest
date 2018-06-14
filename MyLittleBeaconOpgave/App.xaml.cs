@@ -2,6 +2,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MyLittleBeaconOpgave.Data;
+using MyLittleBeaconOpgave.Models;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyLittleBeaconOpgave
@@ -11,6 +12,7 @@ namespace MyLittleBeaconOpgave
         public static CustomerController customerController;
         public static SalesOrderController salesOrderController;
         public static ItemController itemController;
+        public static SalesLineController salesLineController;
 
 
         public App()
@@ -66,6 +68,17 @@ namespace MyLittleBeaconOpgave
                     itemController = new ItemController();
                 }
                 return itemController;
+            }
+        }
+        public static SalesLineController SalesLineController
+        {
+            get
+            {
+                if (salesLineController == null)
+                {
+                    salesLineController = new SalesLineController();
+                }
+                return salesLineController;
             }
         }
     }

@@ -73,6 +73,7 @@ namespace MyLittleBeaconOpgave.ViewModel
             }
         }
 
+
         public void GetDbList()
         {
             App.CustomerController.GetCustomer();

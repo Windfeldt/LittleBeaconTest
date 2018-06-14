@@ -1,35 +1,34 @@
-﻿using SQLite;
+﻿using System;
+using SQLite;
 using Xamarin.Forms;
 using MyLittleBeaconOpgave.Models;
 using System.Collections.Generic;
 using System.Linq;
-
 namespace MyLittleBeaconOpgave.Data
 {
-    public class ItemController
+    public class SalesLineController
     {
         static object locker = new object();
         SQLiteConnection database;
-
-        public ItemController()
+        public SalesLineController()
         {
             database = DependencyService.Get<ISQLite>().GetConnection();
-            database.CreateTable<Item>();
+            database.CreateTable<SalesLine>();
         }
 
-        public List<Item> tableListItem;
+        public List<SalesLine> tablesalesLine;
 
-        public List<Item> GetItems()
+        public List<SalesLine> GetSalesLines()
         {
             lock (locker)
             {
-                if (database.Table<Item>().Count() == 0)
+                if (database.Table<SalesLine>().Count() == 0)
                 {
                     return null;
                 }
                 else
                 {
-                    return tableListItem = database.Table<Item>().ToList();
+                    return tablesalesLine = database.Table<SalesLine>().ToList<SalesLine>();
                 }
             }
         }

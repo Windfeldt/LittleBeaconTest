@@ -30,6 +30,18 @@ namespace MyLittleBeaconOpgave.Data
                 }
                 else
                 {
+
+                    var salesorderid = "test";
+                    var saleslines = database.Table<SalesLine>().Where(i => i.OrderId == salesorderid).ToList();
+                    var line = saleslines.FirstOrDefault();
+
+                    var item = database.Table<Item>().Where(i => i.Id == line.ItemId).FirstOrDefault();
+
+
+                    var sql = $"select {nameof(Item.Price)} from {nameof(Item)} where {nameof(Item.Id)} = '{line.ItemId}'";
+                    var res = database.ExecuteScalar<double>(sql);
+
+
                     return tableListSalesOrder = database.Table<SalesOrder>().ToList<SalesOrder>();
 
                 }

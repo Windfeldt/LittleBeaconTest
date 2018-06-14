@@ -5,8 +5,6 @@ namespace MyLittleBeaconOpgave.Models
 {
     public class SalesLine
     {
-        public SalesLine()
-        { }
         public string OrderId { get; set; }
         public string Id { get; set; }
         public string Note { get; set; }
@@ -15,7 +13,6 @@ namespace MyLittleBeaconOpgave.Models
         public float Discount { get; set; }
         public float DiscountPercent { get; set; }
         public string Size { get; set; }
-
     }
 }
 

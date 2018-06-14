@@ -33,11 +33,6 @@ namespace MyLittleBeaconOpgave
 
 
 
-
-
-
-
-
 #region old code
 //string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "opgave.gz");
 //string filePathdb = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "opgave.db");
